@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bggm11y6vrgyx"]
+
+[ext_resource type="Script" uid="uid://dc75iqxqhuvhg" path="res://scripts/counter/Counter.cs" id="1_sc7mx"]
+[ext_resource type="Texture2D" uid="uid://dnris6m8mj7yf" path="res://assets/square_inverted.png" id="2_yttel"]
+
+[node name="Counter" type="Control" unique_id=2040076536]
+custom_minimum_size = Vector2(40, 66)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sc7mx")
+Value = 847
+MaxValue = 999
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=591713602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yttel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1481285638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1174388174]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1

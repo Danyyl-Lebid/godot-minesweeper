@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c313yn1vc8ntb"]
+
+[ext_resource type="Texture2D" uid="uid://djt22hjlgrk6y" path="res://assets/square.png" id="1_3dk36"]
+[ext_resource type="Script" uid="uid://cs2kkxqw5rqe5" path="res://scripts/tile/Tile.cs" id="1_6p3j2"]
+[ext_resource type="Texture2D" uid="uid://dnris6m8mj7yf" path="res://assets/square_inverted.png" id="3_jy7pm"]
+[ext_resource type="Texture2D" uid="uid://bvwmhlg46rggq" path="res://assets/MineSweeper_ModeliveskyCom/MineSweeper_ModeliveskyCom/64x64/empty_64x64.png" id="4_q7utx"]
+[ext_resource type="Script" uid="uid://680jt25toarl" path="res://scripts/tile/state/TileState.cs" id="6_gtpg2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywnoi"]
+texture = ExtResource("1_3dk36")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7utx"]
+texture = ExtResource("3_jy7pm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jy7pm"]
+texture = ExtResource("1_3dk36")
+
+[node name="Tile" type="Node2D" unique_id=1376813437]
+script = ExtResource("1_6p3j2")
+
+[node name="Button" type="Button" parent="." unique_id=1343052361]
+z_index = 2
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ywnoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q7utx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jy7pm")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=420804618]
+visible = false
+position = Vector2(8, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_q7utx")
+
+[node name="MarkSprite" type="Sprite2D" parent="." unique_id=506809586]
+z_index = 3
+position = Vector2(8, 8)
+scale = Vector2(0.03, 0.03)
+
+[node name="TileState" type="Node" parent="." unique_id=274510244]
+script = ExtResource("6_gtpg2")
+
+[connection signal="gui_input" from="Button" to="." method="OnInput"]

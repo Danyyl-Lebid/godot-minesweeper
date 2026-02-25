@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://btobhocphu7po"]
+
+[ext_resource type="Script" uid="uid://co20c2247e4c7" path="res://scripts/MainScene.cs" id="1_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://bxlwh0bawxgqq" path="res://scenes/ui.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://bpjf6gpplw5b0" path="res://scenes/game_engine.tscn" id="3_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://dm21cwslreyhg" path="res://scenes/event_manager.tscn" id="4_pu3yx"]
+
+[node name="MainScene" type="Control" unique_id=702157311]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ykc4")
+
+[node name="UI" parent="." unique_id=1774188185 instance=ExtResource("1_w2twt")]
+layout_mode = 1
+
+[node name="GameEngine" parent="." unique_id=726553614 instance=ExtResource("3_pu3yx")]
+
+[node name="EventManager" parent="." unique_id=1569859999 instance=ExtResource("4_pu3yx")]
